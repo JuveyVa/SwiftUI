@@ -9,10 +9,10 @@ import SwiftUI
 
 class CelciusViewModel: ObservableObject {
     @Published var celcius: String = ""
-    @Published var farenheit: Int = 0
+    @Published var farenheit: Double = 0.0
 
     func calculateFarenheit() {
-        let cel = Int(celcius) ?? 0
+        let cel = Double(celcius) ?? 0.0
         farenheit = (cel * 9/5) + 32
     }
 }

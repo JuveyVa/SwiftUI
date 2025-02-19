@@ -14,7 +14,7 @@ struct CelciusConverterView: View {
 
     var body: some View {
         VStack(spacing: 20) {
-            Text("Tepmature Converter")
+            Text("Temperature Converter")
                 .font(.title2)
                 .bold()
             
@@ -31,7 +31,7 @@ struct CelciusConverterView: View {
             .foregroundColor(.white)
             .cornerRadius(10)
             
-            Text("Farhenheit: \(viewModel.farenheit) grados")
+            Text("Farenheit: \(String(format: "%.1f", viewModel.farenheit))°F")
             
             
             if (viewModel.farenheit == 0){
