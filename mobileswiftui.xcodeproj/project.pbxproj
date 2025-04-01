@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		C3774F712D8CF4AE0006CEA4 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = C3774F702D8CF4AE0006CEA4 /* Lottie */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		C37625332D5ECF9C00D3F17F /* mobileswiftui.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mobileswiftui.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -23,6 +27,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3774F712D8CF4AE0006CEA4 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +70,7 @@
 			);
 			name = mobileswiftui;
 			packageProductDependencies = (
+				C3774F702D8CF4AE0006CEA4 /* Lottie */,
 			);
 			productName = mobileswiftui;
 			productReference = C37625332D5ECF9C00D3F17F /* mobileswiftui.app */;
@@ -94,6 +100,9 @@
 			);
 			mainGroup = C376252A2D5ECF9C00D3F17F;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				C3774F6F2D8CF4AE0006CEA4 /* XCRemoteSwiftPackageReference "lottie-spm" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = C37625342D5ECF9C00D3F17F /* Products */;
 			projectDirPath = "";
@@ -322,6 +331,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C3774F6F2D8CF4AE0006CEA4 /* XCRemoteSwiftPackageReference "lottie-spm" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-spm.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.5.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C3774F702D8CF4AE0006CEA4 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C3774F6F2D8CF4AE0006CEA4 /* XCRemoteSwiftPackageReference "lottie-spm" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C376252B2D5ECF9C00D3F17F /* Project object */;
 }
