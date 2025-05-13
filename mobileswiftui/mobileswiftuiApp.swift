@@ -11,7 +11,7 @@ import SwiftUI
 struct mobileswiftuiApp: App {
     var body: some Scene {
         WindowGroup {
-            MainView()
+            WebPage()
         }
     }
 }
