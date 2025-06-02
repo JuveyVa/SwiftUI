@@ -26,7 +26,7 @@ struct NotificationView: View {
                         .foregroundColor(.white)
                         .padding()
                         .frame(maxWidth: .infinity)
-                        .background(Color.black)
+                        .background(Color.blue)
                         .cornerRadius(10)
                 }
 
@@ -38,6 +38,28 @@ struct NotificationView: View {
                         .padding()
                         .frame(maxWidth: .infinity)
                         .background(Color.green)
+                        .cornerRadius(10)
+                }
+
+                Button(action: {
+                    viewModel.startRepeatingNotification()
+                }) {
+                    Text("Empezar notificación cada 10 segundos")
+                        .foregroundColor(.white)
+                        .padding()
+                        .frame(maxWidth: .infinity)
+                        .background(Color.orange)
+                        .cornerRadius(10)
+                }
+
+                Button(action: {
+                    viewModel.stopRepeatingNotification()
+                }) {
+                    Text("Detener notificación repetitiva")
+                        .foregroundColor(.white)
+                        .padding()
+                        .frame(maxWidth: .infinity)
+                        .background(Color.red)
                         .cornerRadius(10)
                 }
             }

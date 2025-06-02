@@ -9,6 +9,8 @@ import Foundation
 import UserNotifications
 
 class NotificationViewModel: ObservableObject {
+    private var timer: Timer?
+
     func requestPermission() {
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { granted, _ in
             print(granted ? "Permiso concedido" : "Permiso denegado")
@@ -27,4 +29,33 @@ class NotificationViewModel: ObservableObject {
 
         UNUserNotificationCenter.current().add(request)
     }
+
+    func startRepeatingNotification() {
+        print("se dio click en el boton")
+        stopRepeatingNotification()
+
+        timer = Timer.scheduledTimer(withTimeInterval: 10, repeats: true) { [weak self] _ in
+            self?.sendNotification()
+        }
+        print("Se inicio la notificacion repetitiva")
+    }
+
+    func stopRepeatingNotification() {
+        timer?.invalidate()
+        timer = nil
+        print("Se detuvo la notificacion repetitiva")
+    }
+
+    private func sendNotification() {
+        let content = UNMutableNotificationContent()
+        content.title = "¡Toma Agua!"
+        content.body = "Toma agua, ya pasaron 10 segundos."
+        content.sound = .default
+
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
+        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+
+        UNUserNotificationCenter.current().add(request)
+    }
 }
+
