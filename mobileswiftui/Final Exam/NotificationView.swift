@@ -19,15 +19,29 @@ struct NotificationView: View {
             Spacer()
 
             VStack(spacing: 20) {
-                Button("Pedir Permiso") {
+                Button(action: {
                     viewModel.requestPermission()
+                }) {
+                    Text("Pedir Permiso")
+                        .foregroundColor(.white)
+                        .padding()
+                        .frame(maxWidth: .infinity)
+                        .background(Color.black)
+                        .cornerRadius(10)
                 }
 
-                Button("Empezar tiempo para tomar agua") {
+                Button(action: {
                     viewModel.scheduleNotification()
+                }) {
+                    Text("Empezar tiempo para tomar agua")
+                        .foregroundColor(.white)
+                        .padding()
+                        .frame(maxWidth: .infinity)
+                        .background(Color.green)
+                        .cornerRadius(10)
                 }
             }
-            .padding()
+            .padding(.horizontal)
 
             Spacer()
         }
