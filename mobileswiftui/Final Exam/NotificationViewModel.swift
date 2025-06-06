@@ -22,7 +22,7 @@ class NotificationViewModel: ObservableObject {
         let content = UNMutableNotificationContent()
         content.title = "¡Toma Agua!"
         content.body = "Recuerda que debes de tomar agua cada cierto tiempo."
-        content.sound = .default
+        content.sound = UNNotificationSound(named: UNNotificationSoundName("How the Balatro Negative Card Sound Was Made.wav"))
 
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
         let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
@@ -37,6 +37,7 @@ class NotificationViewModel: ObservableObject {
         timer = Timer.scheduledTimer(withTimeInterval: 10, repeats: true) { [weak self] _ in
             self?.sendNotification()
         }
+
         print("Se inicio la notificacion repetitiva")
     }
 
@@ -50,7 +51,7 @@ class NotificationViewModel: ObservableObject {
         let content = UNMutableNotificationContent()
         content.title = "¡Toma Agua!"
         content.body = "Toma agua, ya pasaron 10 segundos."
-        content.sound = .default
+        content.sound = UNNotificationSound(named: UNNotificationSoundName("How the Balatro Negative Card Sound Was Made.wav"))
 
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
         let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)

@@ -44,7 +44,7 @@ struct NotificationView: View {
                 Button(action: {
                     viewModel.startRepeatingNotification()
                 }) {
-                    Text("Empezar notificación cada 10 segundos")
+                    Text("Empezar notificacion cada 10 segundos")
                         .foregroundColor(.white)
                         .padding()
                         .frame(maxWidth: .infinity)
